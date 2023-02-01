@@ -480,10 +480,10 @@ while not i == 10000:
         + x가 음수일 때는 0, 아니면 x
             + x가 음수일 경우에 gradient값이 0이 되는 문제가 있지만 sigmoid보다는 잘 작동됨
 * Obtimizer
-    - 실제 동작을 그래프 상으로 표현 </br>
-        ![http://www.denizyuret.com/2015/03/alec-radfords-animations-for.html](http://2.bp.blogspot.com/-q6l20Vs4P_w/VPmIC7sEhnI/AAAAAAAACC4/g3UOUX2r_yA/s400/s25RsOr%2B-%2BImgur.gif)
     - Optimizer의 발전 과정 </br>
         ![https://blog.naver.com/PostView.nhn?blogId=another0430&logNo=222063836606](https://blog.kakaocdn.net/dn/bQ934t/btqASyVqeeD/ozNDSKWvAbxiJb7VtgLkSk/img.png) </br>
+    - 실제 동작을 그래프 상으로 표현 </br>
+        ![http://www.denizyuret.com/2015/03/alec-radfords-animations-for.html](http://2.bp.blogspot.com/-q6l20Vs4P_w/VPmIC7sEhnI/AAAAAAAACC4/g3UOUX2r_yA/s400/s25RsOr%2B-%2BImgur.gif)
         
 
 # chap09-2 - Weight initialization
@@ -505,25 +505,25 @@ while not i == 10000:
 
 ### Xavier initialization
 * Xavier Normal initialization
-    - $W ~ N(0, Var(W))$
-    - $Var(W) = \sqrt{\frac{2}{n_{in} + n_{out}}}$
+    - $W \sim N(0, Var(W))$
+    - $\displaystyle Var(W) = \sqrt{\frac{2}{n_{in} + n_{out}}}$
         + $n_{in}$ : layer의 input 수
             + 이전 layer의 수
         + $n_{out}$ : layer의 output 수
             + 다음 layer의 수
 * Xavier Uniform initialization
-    - $W ~ U(-\sqrt{\frac{6}{n_{in} + n_{out}}}, +\sqrt{\frac{6}{n_{in} + n_{out}}})$
+    - $\displaystyle W \sim U\left(-\sqrt{\frac{6}{n_{in} + n_{out}}}, +\sqrt{\frac{6}{n_{in} + n_{out}}}\right)$
 * 위의 수식을 이용해서 초기화 한다
 * 비선형 함수(sigmoid, tanh 등)에서 성능이 뛰어나지만, ReLU 함수에서 사용시 출력값이 0으로 수렴하게되는 문제가 있다
 
 ### He initialization
 * Xavier의 변형
 * He Normal initialization
-    - $W ~ N(0, Var(W))$
-    - $Var(W) = \sqrt{\frac{2}{n_{in}}}$
+    - $W \sim  N(0, Var(W))$
+    - $\displaystyle Var(W) = \sqrt{\frac{2}{n_{in}}}$
         + $n_{in}$ : layer의 input 수
 * He Uniform initialization
-    - $W ~ U(-\sqrt{\frac{6}{n_{in}}}, +\sqrt{\frac{6}{n_{in}}})$
+    - $\displaystyle W \sim U\left(-\sqrt{\frac{6}{n_{in}}}, +\sqrt{\frac{6}{n_{in}}}\right)$
 * Xavier에서 $n_{out}$ 을 제외한 형태
 * 위의 수식을 이용해서 초기화 한다
 
